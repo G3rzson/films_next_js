@@ -1,3 +1,5 @@
+import { CiImageOn } from "react-icons/ci";
+
 export default function Home() {
   return (
     <div>
@@ -6,6 +8,7 @@ export default function Home() {
         Megjegyzés !!! felhasználó kezelés filmek hozzáadása majd később
         keresőmezővel kiegészítés!!!
       </p>
+      <CiImageOn size={24} color="orange" />
     </div>
   );
 }

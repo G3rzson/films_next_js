@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "../Components/Header";
+import Header from "../Components/Header/Header";
 import Footer from "../Components/Footer";
 
 export const metadata: Metadata = {
-  title: "Create Next App",
+  title: "Film App",
 };
 
 export default function RootLayout({

@@ -6,7 +6,7 @@ export default function notFound() {
       <h1 className="text-3xl">404 | Page not found</h1>
       <Link
         href={"/"}
-        className="border-2 border-red-400  hover:underline cursor-pointer rounded py-2 px-4 text-2xl"
+        className="bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:underline duration-300 cursor-pointer rounded py-2 px-4 text-2xl"
       >
         Go to the Home page
       </Link>
