@@ -7,7 +7,7 @@ import React from "react";
 export default function NavLinkItem() {
   const pathName = usePathname();
   return (
-    <nav className="flex">
+    <nav className="flex flex-col sm:flex-row items-center justify-center w-full sm:w-auto">
       {navLinks.map((link) => {
         const isActive =
           pathName === link.href ||
@@ -16,7 +16,7 @@ export default function NavLinkItem() {
           <Link
             className={`${
               isActive ? "bg-zinc-300 text-zinc-800" : ""
-            } flex items-center justify-center p-3 duration-300 text-zinc-300 hover:text-zinc-800 hover:bg-zinc-300`}
+            } p-3 duration-300 block text-center w-full sm:w-auto text-zinc-300 hover:text-zinc-800 hover:bg-zinc-300`}
             href={link.href}
             key={link.title}
           >

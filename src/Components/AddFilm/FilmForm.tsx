@@ -13,6 +13,11 @@ export default function FilmForm() {
     formState: { errors, isSubmitting },
   } = useForm<FilmFormData>({
     resolver: zodResolver(filmFormSchema),
+    defaultValues: {
+      title: "",
+      content: "",
+      isFavorite: false,
+    },
   });
 
   async function onSubmit(data: FilmFormData) {

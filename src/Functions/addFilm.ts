@@ -12,7 +12,7 @@ export async function addFilm(data: FilmFormData) {
     return { error: "Hibás adat." };
   }
 
-  const { title, content } = parsed.data;
+  const { title, content, isFavorite } = parsed.data;
 
   try {
     await connectToDB();
@@ -26,6 +26,7 @@ export async function addFilm(data: FilmFormData) {
     await FilmModel.create({
       title,
       content,
+      isFavorite: isFavorite || false,
     });
   } catch (error) {
     console.error("Hiba a létrehozás során:", error);

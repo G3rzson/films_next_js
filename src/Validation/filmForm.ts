@@ -12,6 +12,8 @@ export const filmFormSchema = z.object({
     .nonempty("Tartalom megadása kötelező!")
     .max(500, { message: "Túl hosszú tartalom!" })
     .trim(),
+
+  isFavorite: z.boolean(),
 });
 
 export type FilmFormData = z.infer<typeof filmFormSchema>;

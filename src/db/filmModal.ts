@@ -1,12 +1,14 @@
 import { FilmFormData } from "@/Validation/filmForm";
-import { Schema, model, models } from "mongoose";
+import { Schema, model, models, Document } from "mongoose";
 
-// Schema
-const filmSchema = new Schema<FilmFormData>({
+interface FilmDocument extends FilmFormData, Document {}
+
+const filmSchema = new Schema<FilmDocument>({
   title: { type: String, required: true, unique: true },
   content: { type: String, required: true, unique: true },
+  isFavorite: { type: Boolean, default: false },
 });
-// Model
-const FilmModel = models.Film || model<FilmFormData>("Film", filmSchema);
+
+const FilmModel = models.Film || model<FilmDocument>("Film", filmSchema);
 
 export default FilmModel;
