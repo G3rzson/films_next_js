@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "../Components/Header/Header";
 import Footer from "../Components/Footer";
+import { GlobalProvider } from "@/GlobalContext/GlobalContext";
 
 export const metadata: Metadata = {
   title: "Film App",
@@ -15,9 +16,11 @@ export default function RootLayout({
   return (
     <html lang="hu">
       <body className="bg-zinc-300 text-zinc-800 flex flex-col min-h-screen">
-        <Header />
-        <main className="flex-grow">{children}</main>
-        <Footer />
+        <GlobalProvider>
+          <Header />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+        </GlobalProvider>
       </body>
     </html>
   );

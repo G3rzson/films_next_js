@@ -7,6 +7,7 @@ import {
 } from "@/Validation/registerUserForm";
 import { connectToDB } from "@/db/connectToDB";
 import RegisterUserModel from "@/db/registerUserModal";
+
 export async function registerUser(data: RegisterFormData) {
   const parsed = registerFormSchema.safeParse(data);
 
@@ -24,7 +25,7 @@ export async function registerUser(data: RegisterFormData) {
     });
 
     if (existingUser) {
-      return { error: "User already exist." };
+      return { error: "Felhsználónév vagy email már létezik." };
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
